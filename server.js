@@ -23,9 +23,10 @@ app.use("/api/payment", paymentRoutes)
 app.use("/webhook", webhookRoutes)
 
 // Rota de status
-app.get("/api/status", (req, res) => {
-  res.json({ status: "ok", timestamp: new Date().toISOString() })
+app.get("/api/payment/status", (req, res) => {
+  res.json({ configured: true })
 })
+
 
 app.listen(port, () => {
   console.log(`🚀 Servidor rodando na porta ${port}`)
